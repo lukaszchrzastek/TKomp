@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="TKomp.App.Views.ColumnsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TKomp.App.Views"
+             xmlns:r="clr-namespace:TKomp.App"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <Button Content="{x:Static r:Resource.LoadData}" Height="25" Grid.Row="0" Width="120"  Command="{Binding LoadDataCommand}" HorizontalAlignment="Right"  />
+
+        <DataGrid x:Name="dataGrid" Grid.Row="1"  ItemsSource="{Binding Columns}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0 10 0 0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static r:Resource.HeaderId}" Binding="{Binding Path='TableName'}" IsReadOnly="True" Width="100"/>
+                <DataGridTextColumn   Header="Country" Binding="{Binding Path='ColumnName'}" IsReadOnly="True" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+
+
+</UserControl>

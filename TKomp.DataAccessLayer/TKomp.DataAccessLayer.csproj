@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TKomp.Domain\TKomp.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Queries\GetColumnInfo.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GetColumnInfo.sql</DependentUpon>
+    </Compile>
+    <Compile Update="Queries\QuerieFiles.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>QuerieFiles.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Queries\QuerieFiles.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuerieFiles.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Queries\GetColumnInfo.sql">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GetColumnInfo.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
